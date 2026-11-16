@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08080a">
   <title>JATUPON · DR TRADING 2022 CO., LTD.</title>
-  <meta name="description" content="Jatupon ผู้ก่อตั้ง DR TRADING 2022 CO., LTD. พัฒนาระบบเทรดอัตโนมัติด้วย AI และทำธุรกิจอาหารทะเลสด">
+  <meta name="description" content="Jatupon ผู้ก่อตั้ง DR TRADING 2022 CO., LTD. สร้างระบบเทรด ซอฟต์แวร์ธุรกิจ และงาน AI พร้อมจำหน่ายอาหารทะเลและวัตถุดิบร้านอาหารราคาส่ง">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="th_TH">
   <meta property="og:site_name" content="JATUPON">
   <meta property="og:title" content="JATUPON · DR TRADING 2022 CO., LTD.">
-  <meta property="og:description" content="พัฒนาระบบเทรดอัตโนมัติด้วย AI และทำธุรกิจอาหารทะเลสด">
+  <meta property="og:description" content="สร้างระบบเทรด ซอฟต์แวร์ธุรกิจ และงาน AI จากปัญหาจริงที่เจอเองในงานทุกวัน">
   <meta property="og:url" content="https://jatupon.drfxtrading.net/">
   <link rel="canonical" href="https://jatupon.drfxtrading.net/">
   <!-- เพิ่ม og:image แบบ HTTPS ในส่วนนี้เมื่อมีภาพแชร์จริง -->
@@ -162,6 +162,16 @@
     }
 
     .bio span { display: block; }
+
+    .scope {
+      margin: 12px auto 0;
+      max-width: 30em;
+      color: var(--champagne);
+      font-size: .8rem;
+      line-height: 1.7;
+      letter-spacing: .03em;
+      text-wrap: balance;
+    }
 
     .ornament {
       display: flex;
@@ -363,6 +373,7 @@
         <h1 lang="en">JATUPON</h1>
         <p class="role" lang="en">Founder &amp; CEO · DR TRADING 2022 CO., LTD.</p>
         <p class="bio" id="bio" hidden></p>
+        <p class="scope" id="scope" hidden></p>
       </header>
 
       <div class="ornament reveal" aria-hidden="true">
@@ -386,9 +397,10 @@
     const SITE = {
       profileImage: './profile.jpg', // เว้นว่างเพื่อใช้ monogram J หรือใส่ URL รูป
       bio: [
-        'พัฒนาระบบเทรดอัตโนมัติด้วย AI',
-        'และทำธุรกิจอาหารทะเลสด'
+        'สร้างระบบเทรด ซอฟต์แวร์ธุรกิจ และงาน AI',
+        'จากปัญหาจริงที่เจอเองในงานทุกวัน'
       ],
+      scope: 'AI Trading · ซอฟต์แวร์ร้านค้า · AI Content · จำหน่ายอาหารทะเล & วัตถุดิบร้านอาหารราคาส่ง',
       groups: [
         {
           label: 'About',
@@ -408,7 +420,7 @@
             },
             { title: 'Billdee', description: 'ระบบออกบิลออนไลน์สำหรับร้านค้า', url: 'https://billdee.net' },
             { title: 'Billdee PostHub', description: 'บอทโพสต์ลงสินค้าอัตโนมัติ', url: '' },
-            { title: 'Jatupon Seafoods', description: 'อาหารทะเลสด', url: 'https://line.me/R/ti/p/%40777dnvvc' }
+            { title: 'Jatupon Seafoods', description: 'อาหารทะเล & วัตถุดิบร้านอาหารราคาส่ง', url: 'https://line.me/R/ti/p/%40777dnvvc' }
           ]
         },
         {
@@ -473,6 +485,11 @@
     const bio = document.querySelector('#bio');
     bio.append(...SITE.bio.map(line => makeText(line)));
     bio.hidden = !SITE.bio.length;
+    if (SITE.scope) {
+      const scope = document.querySelector('#scope');
+      scope.textContent = SITE.scope;
+      scope.hidden = false;
+    }
 
     if (SITE.profileImage) {
       const portrait = document.querySelector('#portrait');
