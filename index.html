@@ -393,8 +393,8 @@
         {
           label: 'About',
           links: [
-            { title: 'About Me', description: 'รู้จักผม', url: '' },
-            { title: 'DR TRADING 2022 CO., LTD.', description: 'ข้อมูลบริษัท', url: '' }
+            { title: 'About Me', description: 'รู้จักผม', url: 'https://jatupon.drfxtrading.net/about.html' },
+            { title: 'DR TRADING 2022 CO., LTD.', description: 'ข้อมูลบริษัท', url: 'https://jatupon.drfxtrading.net/company.html' }
           ]
         },
         {
@@ -454,6 +454,7 @@
 
       if (href) {
         anchor.href = href;
+        if (new URL(href).hostname === 'jatupon.drfxtrading.net') anchor.removeAttribute('target');
       } else {
         anchor.setAttribute('role', 'link');
         anchor.setAttribute('aria-disabled', 'true');
